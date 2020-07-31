@@ -16,10 +16,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: |
-          npm run setup
-          npm run lint
-          npm run dependency:check
+      - run: npm run setup
+      - run: npm run lint
+      - run: npm run dependency:check
         env:
           ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
           ACCESS_KEY_SECRET: ${{ secrets.ACCESS_KEY_SECRET }}
